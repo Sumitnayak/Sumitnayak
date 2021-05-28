@@ -1,0 +1,24 @@
+import random
+
+def Guess_game(x): # 'x' is a parameter which wlll get its value after passing an argument in this function i.e Guess_game()
+    random_number = random.randint(0, x) # This is how we create random numbers from 0 to the given range which is the parameter 'x'
+    guess = 0
+    # Here we are using While loop so that guess variable which asking the user to enter a guess will get looping until the guess matches the random number 
+    while guess != random_number:
+        # Here I imported the time module to make the game more finner and indicate us that the machine is checking the user entered number
+        import time
+        guess = int(input(f"Enter a number between 0 to {x}: ")) # This is Where the user will input his/her guess
+        print("Checking....")
+        time.sleep(1)
+        if guess < random_number:     
+            print("Too low ")   # If the machine finds out the guess is less that the given random number then it will give an indication 'Too low' then you have to enter again  
+        elif guess > random_number:
+            print("Too high") # If the machine finds out the guess is higher that the given random number then it will give an indication 'Too high' then you have to enter again
+
+
+    print("Yay you won!!!!") # When the guess matches the random_number 
+
+Guess_game(10) # 10 is the argument passed to the Guess_game() function which sets the value of the parameter x
+               # You can also change this according to your disired range Example: Guess_game(10) here 10 is the max range
+               #                                                                  Guess_game(100) here 100 is the max range   
+
